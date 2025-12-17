@@ -1,11 +1,14 @@
 import { ThemeProvider } from '@emotion/react'
+import { useAppStore } from '../store/use-app-store/use-app-store'
 import { GlobalStyles } from '../styles/global'
-import { defaultTheme } from '../styles/themes/default'
+import { darkTheme, lightTheme } from '../styles/themes/default'
 import { Routes } from './routes/routes'
 
 export function App() {
+  const { theme } = useAppStore()
+
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
       <Routes />
     </ThemeProvider>
