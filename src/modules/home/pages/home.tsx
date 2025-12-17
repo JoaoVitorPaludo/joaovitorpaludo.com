@@ -1,3 +1,9 @@
+import { Header } from '../../../components/layout/header/header'
+import * as S from './styles'
 export function Home() {
-  return <h1>Home Page</h1>
+  return (
+    <S.HomePageContainer>
+      <Header />
+    </S.HomePageContainer>
+  )
 }
