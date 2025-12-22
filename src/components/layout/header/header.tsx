@@ -1,10 +1,18 @@
-import { Github, Linkedin, Mail, Menu, Moon, Sun, X } from 'lucide-react'
+import {
+  Github,
+  Languages,
+  Linkedin,
+  Mail,
+  Menu,
+  Moon,
+  Sun,
+  X,
+} from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppStore } from '../../../store/use-app-store/use-app-store'
 import * as S from './styles'
 
-// Mock data since it's not available in the workspace yet
 const mockData = {
   personal: {
     github: 'https://github.com',
@@ -14,7 +22,7 @@ const mockData = {
 }
 
 export function Header() {
-  const { setTheme, theme } = useAppStore()
+  const { setTheme, theme, toggleLanguage } = useAppStore()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useTranslation('header')
 
@@ -74,14 +82,23 @@ export function Header() {
               </S.SocialLink>
             </S.SocialLinks>
 
-            <S.ThemeToggle
-              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            >
-              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </S.ThemeToggle>
+            <S.ActionsContainer>
+              <S.ThemeToggle onClick={toggleLanguage}>
+                <Languages size={20} />
+              </S.ThemeToggle>
+
+              <S.ThemeToggle
+                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              >
+                {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              </S.ThemeToggle>
+            </S.ActionsContainer>
           </S.DesktopNav>
 
           <S.MobileMenuButtonContainer>
+            <S.ThemeToggle onClick={toggleLanguage}>
+              <Languages size={20} />
+            </S.ThemeToggle>
             <S.ThemeToggle
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             >

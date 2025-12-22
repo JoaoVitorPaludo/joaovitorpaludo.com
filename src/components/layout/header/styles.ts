@@ -69,6 +69,9 @@ export const BrandName = styled.span`
   font-weight: 700;
   font-size: 1.25rem;
   color: ${(props) => props.theme.foreground};
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const DesktopNav = styled.div`
@@ -171,11 +174,57 @@ export const MobileNavButton = styled.button`
     color: #22c55e;
   }
 `
-
+export const ActionsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`
 export const MobileSocialLinks = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
   padding-top: 1rem;
   border-top: 1px solid ${(props) => props.theme.border};
+`
+
+export const LanguageContainer = styled.div`
+  position: relative;
+`
+
+export const LanguageDropdown = styled.div`
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: ${(props) => props.theme.card};
+  border: 1px solid ${(props) => props.theme.border};
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 160px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 50;
+`
+
+export const LanguageOption = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  color: ${(props) => props.theme.foreground};
+  cursor: pointer;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+  text-align: left;
+
+  &:hover {
+    background-color: ${(props) => props.theme.secondary};
+  }
 `
