@@ -1,5 +1,5 @@
 import { Header } from '../../../components/layout/header/header'
-import { Hero } from '../components/hero/hero'
+import { Hero } from './hero/hero'
 import * as S from './styles'
 export function Home() {
   return (

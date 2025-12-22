@@ -1,12 +1,15 @@
 import { AnimatePresence } from 'framer-motion'
 
-import { ArrowDown, Download } from 'lucide-react'
+import { ArrowDown, Download, MapPin } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import {
   containerVariants,
   itemVariants,
 } from '../../../../commons/animations/variants'
 import * as S from './styles'
 export function Hero() {
+  const { t } = useTranslation('hero')
+
   const scrollToAbout = () => {
     const element = document.getElementById('about')
     if (element) {
@@ -27,25 +30,25 @@ export function Hero() {
             exit="exit"
           >
             <S.Title variants={itemVariants}>
-              Olá, eu sou
-              <S.Highlight>João Vitor</S.Highlight>
+              {t('title')}
+              <S.Highlight>{t('titleHighlight')}</S.Highlight>
             </S.Title>
-            <S.Subtitle variants={itemVariants}>Software Developer</S.Subtitle>
+            <S.Subtitle variants={itemVariants}>{t('subtitle')}</S.Subtitle>
 
-            <S.Bio variants={itemVariants}>
-              Apaixonado por criar soluções web inovadoras e escaláveis.
-              Especialista em React, Node.js e arquitetura de software.
-            </S.Bio>
+            <S.Bio variants={itemVariants}>{t('bio')}</S.Bio>
 
-            <S.Location variants={itemVariants}>📍 Brasil</S.Location>
+            <S.Location variants={itemVariants}>
+              <MapPin size={17} />
+              {t('location')}
+            </S.Location>
 
             <S.ButtonGroup variants={itemVariants}>
               <S.PrimaryButton onClick={scrollToAbout}>
-                Conhecer mais
+                {t('primaryButton')}
               </S.PrimaryButton>
               <S.SecondaryButton onClick={handleResumeDownload}>
                 <Download size={20} />
-                Download CV
+                {t('secondaryButton')}
               </S.SecondaryButton>
             </S.ButtonGroup>
 

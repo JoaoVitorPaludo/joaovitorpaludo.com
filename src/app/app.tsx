@@ -1,3 +1,5 @@
+import './i18n'
+
 import { ThemeProvider } from '@emotion/react'
 import { useAppStore } from '../store/use-app-store/use-app-store'
 import { GlobalStyles } from '../styles/global'

@@ -118,6 +118,10 @@ export const Location = styled(motion.p)`
   color: #22c55e;
   margin-bottom: 3rem;
   font-weight: 500;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
 
   @media (prefers-color-scheme: dark) {
     color: #4ade80;
