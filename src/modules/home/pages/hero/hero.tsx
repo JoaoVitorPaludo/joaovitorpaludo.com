@@ -26,8 +26,9 @@ export function Hero() {
           <S.ContentWrapper
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
             exit="exit"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
           >
             <S.Title variants={itemVariants}>
               {t('title')}

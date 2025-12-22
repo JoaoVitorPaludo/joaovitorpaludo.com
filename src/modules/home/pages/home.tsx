@@ -1,4 +1,5 @@
 import { Header } from '../../../components/layout/header/header'
+import { About } from './about/about'
 import { Hero } from './hero/hero'
 import * as S from './styles'
 export function Home() {
@@ -7,6 +8,7 @@ export function Home() {
       <Header />
       <main>
         <Hero />
+        <About />
       </main>
     </S.HomePageContainer>
   )
