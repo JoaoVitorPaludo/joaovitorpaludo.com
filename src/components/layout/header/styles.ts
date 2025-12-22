@@ -87,7 +87,9 @@ export const NavButton = styled.button`
   cursor: pointer;
   transition: color 300ms;
   font-size: 1rem;
-
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   &:hover {
     color: #22c55e;
   }
