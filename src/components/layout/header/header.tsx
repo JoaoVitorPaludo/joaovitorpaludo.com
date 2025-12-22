@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, Menu, Moon, Sun, X } from 'lucide-react'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useAppStore } from '../../../store/use-app-store/use-app-store'
 import * as S from './styles'
 
@@ -15,6 +16,7 @@ const mockData = {
 export function Header() {
   const { setTheme, theme } = useAppStore()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useTranslation('header')
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -37,19 +39,19 @@ export function Header() {
 
           <S.DesktopNav>
             <S.NavButton onClick={() => scrollToSection('about')}>
-              About
+              {t('about')}
             </S.NavButton>
             <S.NavButton onClick={() => scrollToSection('experience')}>
-              Experience
+              {t('experience')}
             </S.NavButton>
             <S.NavButton onClick={() => scrollToSection('projects')}>
-              Projects
+              {t('projects')}
             </S.NavButton>
             <S.NavButton onClick={() => scrollToSection('skills')}>
-              Skills
+              {t('skills')}
             </S.NavButton>
             <S.NavButton onClick={() => scrollToSection('contact')}>
-              Contact
+              {t('contact')}
             </S.NavButton>
 
             <S.SocialLinks>

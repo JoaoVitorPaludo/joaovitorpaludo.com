@@ -128,7 +128,8 @@ export const ThemeToggle = styled.button`
   justify-content: center;
 
   &:hover {
-    background-color: ${(props) => props.theme.muted};
+    opacity: 0.8;
+    /* background-color: ${(props) => props.theme.muted}; */
   }
 `
 
