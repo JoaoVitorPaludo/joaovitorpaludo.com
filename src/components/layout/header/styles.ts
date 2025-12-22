@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   z-index: 50;
-  background-color: hsla(var(--background) / 0.8);
+  background-color: ${(props) => props.theme.background};
   backdrop-filter: blur(12px);
   border-bottom: 1px solid ${(props) => props.theme.border};
 `
