@@ -1,5 +1,6 @@
 import { keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
+import { motion } from 'framer-motion'
 
 const pulse = keyframes`
   0%, 100% {
@@ -55,7 +56,7 @@ export const Container = styled.div`
   }
 `
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled(motion.div)`
   max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
@@ -70,7 +71,7 @@ export const StatusDot = styled.div`
   animation: ${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 `
 
-export const Title = styled.h1`
+export const Title = styled(motion.h1)`
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 700;
@@ -89,7 +90,7 @@ export const Highlight = styled.span`
   margin-top: 0.5rem;
 `
 
-export const Subtitle = styled.h2`
+export const Subtitle = styled(motion.h2)`
   font-size: 1.25rem;
   line-height: 1.75rem;
   color: ${(props) => props.theme.mutedForeground};
@@ -102,7 +103,7 @@ export const Subtitle = styled.h2`
   }
 `
 
-export const Bio = styled.p`
+export const Bio = styled(motion.p)`
   font-size: 1.125rem;
   line-height: 1.75rem;
   color: ${(props) => props.theme.mutedForeground};
@@ -113,7 +114,7 @@ export const Bio = styled.p`
   line-height: 1.625;
 `
 
-export const Location = styled.p`
+export const Location = styled(motion.p)`
   color: #22c55e;
   margin-bottom: 3rem;
   font-weight: 500;
@@ -123,7 +124,7 @@ export const Location = styled.p`
   }
 `
 
-export const ButtonGroup = styled.div`
+export const ButtonGroup = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -180,7 +181,7 @@ export const SecondaryButton = styled(ButtonBase)`
   }
 `
 
-export const ScrollButton = styled.button`
+export const ScrollButton = styled(motion.button)`
   animation: ${bounce} 1s infinite;
   color: #22c55e;
   transition: color 150ms;
