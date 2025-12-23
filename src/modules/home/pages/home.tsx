@@ -1,5 +1,6 @@
 import { Header } from '../../../components/layout/header/header'
 import { About } from './about/about'
+import { Experience } from './experience/experience'
 import { Hero } from './hero/hero'
 import * as S from './styles'
 export function Home() {
@@ -9,6 +10,7 @@ export function Home() {
       <main>
         <Hero />
         <About />
+        <Experience />
       </main>
     </S.HomePageContainer>
   )
