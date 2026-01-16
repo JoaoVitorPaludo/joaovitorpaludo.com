@@ -264,7 +264,8 @@ export const ProjectsGrid = styled.div`
 export const GridItem = styled(motion.div)<{ active?: boolean }>`
   background-color: ${(props) => props.theme.card};
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.25); /* shadow-2xl */
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s;
