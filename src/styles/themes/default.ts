@@ -33,7 +33,7 @@ export const darkTheme = {
   backgroundGradient:
     'linear-gradient(to bottom right, #111827, #1f2937, #111827)',
   foreground: '#fff',
-  card: '#0a0a0a',
+  card: '#1f2937',
   cardForeground: '#fafafa',
   popover: '#0a0a0a',
   popoverForeground: '#fafafa',
