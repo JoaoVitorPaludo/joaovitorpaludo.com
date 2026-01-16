@@ -5,7 +5,7 @@ import {
   containerVariants,
   itemVariants,
 } from '../../../../commons/animations/variants'
-import * as S from './style'
+import * as S from './styles'
 
 interface ExperienceItem {
   id: number
