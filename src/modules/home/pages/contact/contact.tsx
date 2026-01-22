@@ -10,6 +10,7 @@ import {
 import { useState } from 'react'
 import * as S from './styles'
 import { useContact } from './useContact'
+import { useTheme } from '@emotion/react'
 
 const mockData = {
   personal: {
@@ -37,7 +38,7 @@ export function Contact() {
     message: '',
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
-
+  const theme = useTheme()
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -69,7 +70,7 @@ export function Contact() {
               <S.ContactItems>
                 <S.ContactItem>
                   <S.IconWrapper>
-                    <Mail color="#22c55e" size={24} />
+                    <Mail color={theme.mainGreen} size={24} />
                   </S.IconWrapper>
                   <S.ContactDetails>
                     <S.ContactLabel>Email</S.ContactLabel>
@@ -81,7 +82,7 @@ export function Contact() {
 
                 <S.ContactItem>
                   <S.IconWrapper>
-                    <Phone color="#22c55e" size={24} />
+                    <Phone color={theme.mainGreen} size={24} />
                   </S.IconWrapper>
                   <S.ContactDetails>
                     <S.ContactLabel>Telefone</S.ContactLabel>
@@ -93,7 +94,7 @@ export function Contact() {
 
                 <S.ContactItem>
                   <S.IconWrapper>
-                    <MapPin color="#22c55e" size={24} />
+                    <MapPin color={theme.mainGreen} size={24} />
                   </S.IconWrapper>
                   <S.ContactDetails>
                     <S.ContactLabel>Localização</S.ContactLabel>
@@ -138,7 +139,7 @@ export function Contact() {
               {isSubmitted ? (
                 <S.SuccessMessage>
                   <CheckCircle
-                    color="#22c55e"
+                    color={theme.mainGreen}
                     size={48}
                     style={{ margin: '0 auto 1rem' }}
                   />

@@ -26,6 +26,7 @@ export const lightTheme = {
   chart4: '#e9c46a',
   chart5: '#f4a261',
   radius: '0.5rem',
+  mainGreen: '#22c55e',
 }
 
 export const darkTheme = {
@@ -56,4 +57,5 @@ export const darkTheme = {
   chart4: '#9333ea',
   chart5: '#db2777',
   radius: '0.5rem',
+  mainGreen: '#22c55e',
 }

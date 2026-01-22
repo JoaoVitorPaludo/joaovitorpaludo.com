@@ -87,7 +87,7 @@ export const Title = styled(motion.h1)`
 
 export const Highlight = styled.span`
   display: block;
-  color: #22c55e;
+  color: ${(props) => props.theme.mainGreen};
   margin-top: 0.5rem;
 `
 
@@ -116,7 +116,7 @@ export const Bio = styled(motion.p)`
 `
 
 export const Location = styled(motion.p)`
-  color: #22c55e;
+  color: ${(props) => props.theme.mainGreen};
   margin-bottom: 3rem;
   font-weight: 500;
   display: flex;
@@ -156,12 +156,12 @@ export const ButtonBase = styled.button`
 `
 
 export const PrimaryButton = styled(ButtonBase)`
-  background-color: #22c55e;
+  background-color: ${(props) => props.theme.mainGreen};
   color: #ffffff;
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  border: 1px solid #22c55e;
+  border: 1px solid ${(props) => props.theme.mainGreen};
   height: 45px;
 
   &:hover {
@@ -173,22 +173,22 @@ export const PrimaryButton = styled(ButtonBase)`
 `
 
 export const SecondaryButton = styled(ButtonBase)`
-  border: 1px solid #22c55e;
-  color: #22c55e;
+  border: 1px solid ${(props) => props.theme.mainGreen};
+  color: ${(props) => props.theme.mainGreen};
   background-color: transparent;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   height: 45px;
   &:hover {
-    background-color: #22c55e;
+    background-color: ${(props) => props.theme.mainGreen};
     color: #ffffff;
   }
 `
 
 export const ScrollButton = styled(motion.button)`
   animation: ${bounce} 1s infinite;
-  color: #22c55e;
+  color: ${(props) => props.theme.mainGreen};
   transition: color 150ms;
   background: none;
   border: none;

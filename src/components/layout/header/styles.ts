@@ -52,11 +52,17 @@ export const LogoContainer = styled.div`
 export const LogoBox = styled.div`
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #22c55e;
+  background-color: rgba(34, 197, 94, 0.1);
+  /* background-color: ${(props) => props.theme.mainGreen}; */
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 export const LogoText = styled.span`
@@ -94,7 +100,7 @@ export const NavButton = styled.button`
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   &:hover {
-    color: #22c55e;
+    color: ${(props) => props.theme.mainGreen};
   }
 `
 
@@ -114,7 +120,7 @@ export const SocialLink = styled.a`
   align-items: center;
 
   &:hover {
-    color: #22c55e;
+    color: ${(props) => props.theme.mainGreen};
   }
 `
 
@@ -171,7 +177,7 @@ export const MobileNavButton = styled.button`
   font-size: 1rem;
 
   &:hover {
-    color: #22c55e;
+    color: ${(props) => props.theme.mainGreen};
   }
 `
 export const ActionsContainer = styled.div`

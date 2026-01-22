@@ -58,7 +58,7 @@ export const Title = styled.h2`
 export const Divider = styled.div`
   width: 5rem;
   height: 0.25rem;
-  background-color: #22c55e;
+  background-color: ${(props) => props.theme.mainGreen};
   margin-left: auto;
   margin-right: auto;
   border-radius: 9999px;
@@ -126,7 +126,7 @@ export const ContactLink = styled.a`
   transition: color 0.2s;
 
   &:hover {
-    color: #22c55e;
+    color: ${(props) => props.theme.mainGreen};
   }
 `
 
@@ -164,7 +164,7 @@ export const SocialLink = styled.a`
     background-color: rgba(34, 197, 94, 0.1);
 
     svg {
-      color: #22c55e;
+      color: ${(props) => props.theme.mainGreen};
     }
   }
 
@@ -178,7 +178,7 @@ export const AvailabilityCard = styled.div`
   padding: 1rem;
   background-color: rgba(34, 197, 94, 0.1);
   border-radius: 0.5rem;
-  border-left: 4px solid #22c55e;
+  border-left: 4px solid ${(props) => props.theme.mainGreen};
 `
 
 export const AvailabilityTitle = styled.h4`
@@ -233,7 +233,7 @@ export const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-color: #22c55e;
+    border-color: ${(props) => props.theme.mainGreen};
     box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
   }
 
@@ -255,7 +255,7 @@ export const TextArea = styled.textarea`
 
   &:focus {
     outline: none;
-    border-color: #22c55e;
+    border-color: ${(props) => props.theme.mainGreen};
     box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
   }
 
@@ -268,7 +268,7 @@ export const TextArea = styled.textarea`
 export const SubmitButton = styled.button`
   width: 100%;
   padding: 1rem 2rem;
-  background-color: #22c55e;
+  background-color: ${(props) => props.theme.mainGreen};
   color: white;
   font-weight: 600;
   border-radius: 0.5rem;
@@ -298,7 +298,7 @@ export const SubmitButton = styled.button`
 
 export const SuccessMessage = styled.div`
   background-color: rgba(34, 197, 94, 0.1);
-  border: 1px solid #22c55e;
+  border: 1px solid ${(props) => props.theme.mainGreen};
   border-radius: 0.5rem;
   padding: 2rem;
   text-align: center;
@@ -307,10 +307,10 @@ export const SuccessMessage = styled.div`
 export const SuccessTitle = styled.h4`
   font-size: 1.25rem;
   font-weight: 600;
-  color: #22c55e;
+  color: ${(props) => props.theme.mainGreen};
   margin-bottom: 0.5rem;
 `
 
 export const SuccessText = styled.p`
-  color: #22c55e;
+  color: ${(props) => props.theme.mainGreen};
 `

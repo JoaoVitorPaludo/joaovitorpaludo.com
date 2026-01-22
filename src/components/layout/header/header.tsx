@@ -12,7 +12,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppStore } from '../../../store/use-app-store/use-app-store'
 import * as S from './styles'
-
+import logo from '../../../assets/base-logo.png'
 const mockData = {
   personal: {
     github: 'https://github.com',
@@ -40,9 +40,10 @@ export function Header() {
         <S.Nav>
           <S.LogoContainer>
             <S.LogoBox>
-              <S.LogoText>JP</S.LogoText>
+              {/* <S.LogoText>JP</S.LogoText> */}
+              <img src={logo} alt="Logo" />
             </S.LogoBox>
-            <S.BrandName>João Vitor</S.BrandName>
+            {/* <S.BrandName>João Vitor</S.BrandName> */}
           </S.LogoContainer>
 
           <S.DesktopNav>

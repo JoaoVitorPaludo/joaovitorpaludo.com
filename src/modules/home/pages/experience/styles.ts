@@ -43,14 +43,14 @@ export const Header = styled.div`
 `
 
 export const Title = styled.h2`
-  font-size: 1.875rem; /* text-3xl */
+  font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 700;
   color: ${(props) => props.theme.foreground};
   margin-bottom: 1rem;
 
   @media (min-width: 768px) {
-    font-size: 2.25rem; /* md:text-4xl */
+    font-size: 2.25rem;
     line-height: 2.5rem;
   }
 `
@@ -58,7 +58,7 @@ export const Title = styled.h2`
 export const Divider = styled.div`
   width: 5rem;
   height: 0.25rem;
-  background-color: #22c55e; /* green-500 */
+  background-color: ${(props) => props.theme.mainGreen};
   margin-left: auto;
   margin-right: auto;
   border-radius: 9999px;
@@ -74,14 +74,14 @@ export const TimelineLine = styled.div`
   top: 0;
   bottom: 0;
   width: 0.125rem; /* w-0.5 */
-  background-color: #22c55e; /* green-500 */
+  background-color: ${(props) => props.theme.mainGreen};
 `
 
 export const ExperienceItem = styled(motion.div)`
   position: relative;
   display: flex;
   align-items: flex-start;
-  margin-bottom: 3rem; /* mb-12 */
+  margin-bottom: 3rem;
   &:last-child {
     margin-bottom: 0;
   }
@@ -92,7 +92,7 @@ export const TimelineDot = styled.div`
   left: 1.5rem; /* left-6 */
   width: 1rem; /* w-4 */
   height: 1rem; /* h-4 */
-  background-color: #22c55e; /* green-500 */
+  background-color: ${(props) => props.theme.mainGreen};
   border-radius: 9999px;
   border-width: 4px;
   border-style: solid;
@@ -103,7 +103,7 @@ export const TimelineDot = styled.div`
 `
 
 export const ExperienceContent = styled.div`
-  margin-left: 5rem; /* ml-20 */
+  margin-left: 5rem;
   flex: 1;
 `
 
@@ -113,7 +113,7 @@ export const ExperienceCard = styled.div`
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem; /* p-6 */
+  padding: 1.5rem;
   transition: all 0.3s;
 
   &:hover {
@@ -134,14 +134,14 @@ export const CardHeader = styled.div`
 `
 
 export const Position = styled.h3`
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.25rem;
   font-weight: 700;
   color: ${(props) => props.theme.foreground};
   margin-bottom: 0.25rem;
 `
 
 export const Company = styled.p`
-  color: #22c55e; /* green-500 */
+  color: ${(props) => props.theme.mainGreen};
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -152,7 +152,7 @@ export const Period = styled.div`
   align-items: center;
   color: ${(props) => props.theme.mutedForeground};
   margin-top: 0.5rem;
-  font-size: 0.875rem; /* text-sm */
+  font-size: 0.875rem;
   font-weight: 500;
 
   @media (min-width: 768px) {
@@ -174,20 +174,13 @@ export const TechList = styled.div`
 
 export const TechItem = styled.span`
   padding: 0.25rem 0.75rem;
-  background-color: #dcfce7; /* green-100 */
-  color: #15803d; /* green-700 */
-  font-size: 0.875rem; /* text-sm */
+  background-color: #dcfce7;
+  color: #15803d;
+  font-size: 0.875rem;
   border-radius: 9999px;
   font-weight: 500;
-
-  /* Dark mode adjustment if needed, assuming theme has a way to detect or using props */
-  /* Since we are using styled-components with theme, we might want to use theme colors or hardcode for now as per request to match structure */
-  /* The original code had dark:bg-green-900/30 dark:text-green-300 */
-  /* We can approximate this or use a helper if available. For now I'll stick to the light theme green or try to use props.theme.type if it exists, but it doesn't seem to. */
-  /* Let's check if we can use a transparent green for background to work on both? */
-
-  background-color: rgba(34, 197, 94, 0.1); /* green-500 with opacity */
-  color: #22c55e;
+  background-color: rgba(34, 197, 94, 0.1);
+  color: ${(props) => props.theme.mainGreen};
 `
 
 export const CTAContainer = styled.div`
@@ -198,12 +191,12 @@ export const CTAContainer = styled.div`
 export const CTAButton = styled.div`
   display: inline-flex;
   align-items: center;
-  color: #22c55e;
+  color: ${(props) => props.theme.mainGreen};
   font-weight: 600;
   cursor: pointer;
   transition: color 0.2s;
 
   &:hover {
-    color: #16a34a; /* green-600 */
+    color: #16a34a;
   }
 `

@@ -58,7 +58,7 @@ export const Title = styled.h2`
 export const Divider = styled.div`
   width: 5rem;
   height: 0.25rem;
-  background-color: #22c55e; /* green-500 */
+  background-color: ${(props) => props.theme.mainGreen};
   margin-left: auto;
   margin-right: auto;
   border-radius: 9999px;
@@ -116,7 +116,7 @@ export const ProjectDetails = styled.div`
 `
 
 export const FeaturedTag = styled.span`
-  color: #22c55e; /* green-500 */
+  color: ${(props) => props.theme.mainGreen};
   font-weight: 600;
   font-size: 0.875rem; /* text-sm */
   margin-bottom: 0.5rem;
@@ -152,13 +152,10 @@ export const TechList = styled.div`
 
 export const TechItem = styled.span`
   padding: 0.25rem 0.75rem;
-  background-color: rgba(34, 197, 94, 0.1); /* green-100 / green-900/30 */
-  color: #15803d; /* green-700 */
-  /* Dark mode text color adjustment might be needed if theme doesn't handle it automatically */
-  /* Using a middle ground or theme specific if possible. */
-  /* For now, let's use the green-500 for text to be safe on both backgrounds */
-  color: #22c55e;
-  font-size: 0.875rem; /* text-sm */
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #15803d;
+  color: ${(props) => props.theme.mainGreen};
+  font-size: 0.875rem;
   border-radius: 9999px;
   font-weight: 500;
 `
@@ -182,11 +179,11 @@ export const LinkButton = styled.a<{ variant?: 'primary' | 'outline' }>`
   ${(props) =>
     props.variant === 'outline'
       ? `
-    border: 2px solid #22c55e;
-    color: #22c55e;
+    border: 2px solid ${props.theme.mainGreen};
+    color: ${props.theme.mainGreen};
     background-color: transparent;
     &:hover {
-      background-color: #22c55e;
+      background-color: ${props.theme.mainGreen};
       color: white;
     }
   `
@@ -207,8 +204,6 @@ export const NavButton = styled.button<{ position: 'left' | 'right' }>`
   width: 3rem;
   height: 3rem;
   background-color: rgba(255, 255, 255, 0.8);
-  /* Dark mode bg adjustment */
-  /* We can use theme.card with opacity */
   background-color: ${(props) => props.theme.card}cc;
 
   border-radius: 9999px;
@@ -241,7 +236,7 @@ export const IndicatorDot = styled.button<{ active: boolean }>`
   border: none;
   cursor: pointer;
   background-color: ${(props) =>
-    props.active ? '#22c55e' : props.theme.mutedForeground};
+    props.active ? props.theme.mainGreen : props.theme.mutedForeground};
   opacity: ${(props) => (props.active ? 1 : 0.3)};
 
   &:hover {
@@ -264,12 +259,12 @@ export const ProjectsGrid = styled.div`
 export const GridItem = styled(motion.div)<{ active?: boolean }>`
   background-color: ${(props) => props.theme.card};
   border-radius: 0.5rem;
-  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); */
-  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s;
-  border: 2px solid ${(props) => (props.active ? '#22c55e' : 'transparent')};
+  border: 2px solid
+    ${(props) => (props.active ? props.theme.mainGreen : 'transparent')};
   &:hover {
     transform: scale(1.05);
   }
@@ -308,7 +303,7 @@ export const GridLinks = styled.div`
     color: ${(props) => props.theme.mutedForeground};
     transition: color 0.2s;
     &:hover {
-      color: #22c55e;
+      color: ${(props) => props.theme.mainGreen};
     }
   }
 `

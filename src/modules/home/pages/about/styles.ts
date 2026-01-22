@@ -43,14 +43,14 @@ export const Header = styled.div`
 `
 
 export const Title = styled.h2`
-  font-size: 1.875rem; /* text-3xl */
+  font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 700;
   color: ${(props) => props.theme.foreground};
   margin-bottom: 1rem;
 
   @media (min-width: 768px) {
-    font-size: 2.25rem; /* md:text-4xl */
+    font-size: 2.25rem;
     line-height: 2.5rem;
   }
 `
@@ -58,7 +58,7 @@ export const Title = styled.h2`
 export const Divider = styled.div`
   width: 5rem;
   height: 0.25rem;
-  background-color: #22c55e;
+  background-color: ${(props) => props.theme.mainGreen};
   margin-left: auto;
   margin-right: auto;
   border-radius: 9999px;
@@ -85,17 +85,16 @@ export const ImageWrapper = styled.div`
 
 export const ProfileImage = styled.img`
   width: 100%;
-  height: 24rem; /* h-96 */
+  height: 24rem;
   object-fit: cover;
   border-radius: 0.5rem;
-  /* box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); */
-  box-shadow: 0 25px 50px -12px rgba(34, 197, 94, 0.25); /* green-500/25 */
+  box-shadow: 0 25px 50px -12px rgba(34, 197, 94, 0.25);
 `
 
 export const Content = styled.div``
 
 export const Subtitle = styled.h3`
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
   color: ${(props) => props.theme.foreground};
@@ -129,14 +128,12 @@ export const IconBox = styled.div`
   width: 3rem;
   height: 3rem;
   background-color: ${(props) =>
-    props.theme.background === '#ffffff'
-      ? '#dcfce7'
-      : 'rgba(20, 83, 45, 0.3)'}; /* green-100 or green-900/30 */
+    props.theme.background === '#ffffff' ? '#dcfce7' : 'rgba(20, 83, 45, 0.3)'};
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #22c55e;
+  color: ${(props) => props.theme.mainGreen};
 `
 
 export const StatInfo = styled.div``
