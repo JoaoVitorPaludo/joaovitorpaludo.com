@@ -221,11 +221,14 @@ export const Label = styled.label`
   color: ${(props) => props.theme.foreground};
   margin-bottom: 0.5rem;
 `
-
-export const Input = styled.input`
+interface InputProps {
+  hasError?: boolean
+}
+export const Input = styled.input<InputProps>`
   width: 100%;
   padding: 1rem;
-  border: 1px solid ${(props) => props.theme.border};
+  border: 1px solid
+    ${(props) => (props.hasError ? props.theme.mainGreen : props.theme.border)};
   border-radius: 0.5rem;
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.foreground};
@@ -243,10 +246,11 @@ export const Input = styled.input`
   }
 `
 
-export const TextArea = styled.textarea`
+export const TextArea = styled.textarea<InputProps>`
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid ${(props) => props.theme.border};
+  border: 1px solid
+    ${(props) => (props.hasError ? props.theme.mainGreen : props.theme.border)};
   border-radius: 0.5rem;
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.foreground};
@@ -302,6 +306,7 @@ export const SuccessMessage = styled.div`
   border-radius: 0.5rem;
   padding: 2rem;
   text-align: center;
+  margin-top: 25%;
 `
 
 export const SuccessTitle = styled.h4`

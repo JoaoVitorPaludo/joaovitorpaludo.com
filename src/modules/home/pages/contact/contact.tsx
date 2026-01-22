@@ -7,10 +7,8 @@ import {
   Phone,
   Send,
 } from 'lucide-react'
-import { useState } from 'react'
 import * as S from './styles'
 import { useContact } from './useContact'
-import { useTheme } from '@emotion/react'
 
 const mockData = {
   personal: {
@@ -22,32 +20,8 @@ const mockData = {
   },
 }
 
-interface FormData {
-  name: string
-  email: string
-  subject: string
-  message: string
-}
-
 export function Contact() {
-  const { methods, handleSubmit } = useContact()
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const theme = useTheme()
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
+  const { methods, handleSubmit, theme } = useContact()
 
   return (
     <S.Section id="contact">
@@ -63,7 +37,6 @@ export function Contact() {
           </S.Header>
 
           <S.Grid>
-            {/* Contact Info */}
             <S.ContactInfo>
               <S.SectionTitle>Informações de Contato</S.SectionTitle>
 
@@ -132,11 +105,10 @@ export function Contact() {
               </S.AvailabilityCard>
             </S.ContactInfo>
 
-            {/* Contact Form */}
             <S.FormSection>
               <S.SectionTitle>Envie uma Mensagem</S.SectionTitle>
 
-              {isSubmitted ? (
+              {methods.formState.isSubmitSuccessful ? (
                 <S.SuccessMessage>
                   <CheckCircle
                     color={theme.mainGreen}
@@ -156,9 +128,9 @@ export function Contact() {
                       <S.Input
                         type="text"
                         id="name"
-                        {...methods.register('name')}
-                        required
+                        {...methods.register('from_name')}
                         placeholder="Seu nome"
+                        hasError={!methods.formState.errors.from_name}
                       />
                     </S.FormGroup>
 
@@ -168,7 +140,8 @@ export function Contact() {
                         type="email"
                         id="email"
                         placeholder="seu@email.com"
-                        {...methods.register('email')}
+                        {...methods.register('from_email')}
+                        hasError={!methods.formState.errors.from_email}
                       />
                     </S.FormGroup>
                   </S.FormGrid>
@@ -178,8 +151,9 @@ export function Contact() {
                     <S.Input
                       type="text"
                       id="subject"
-                      {...methods.register('assubject')}
+                      {...methods.register('subject')}
                       placeholder="Assunto do contato"
+                      hasError={!methods.formState.errors.subject}
                     />
                   </S.FormGroup>
 
@@ -187,12 +161,10 @@ export function Contact() {
                     <S.Label htmlFor="message">Mensagem *</S.Label>
                     <S.TextArea
                       id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
+                      {...methods.register('message')}
                       rows={6}
                       placeholder="Descreva seu projeto ou mensagem..."
+                      hasError={!methods.formState.errors.message}
                     />
                   </S.FormGroup>
 
