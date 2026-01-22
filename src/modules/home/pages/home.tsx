@@ -1,5 +1,6 @@
 import { Header } from '../../../components/layout/header/header'
 import { About } from './about/about'
+import { Contact } from './contact/contact'
 import { Experience } from './experience/experience'
 import { Hero } from './hero/hero'
 import { Projects } from './projects/projects'
@@ -13,6 +14,7 @@ export function Home() {
         <About />
         <Experience />
         <Projects />
+        <Contact />
       </main>
     </S.HomePageContainer>
   )
