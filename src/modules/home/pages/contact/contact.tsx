@@ -8,38 +8,27 @@ import {
   Phone,
   Send,
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import * as S from './styles'
 import { useContact } from './useContact'
 
-const mockData = {
-  personal: {
-    email: 'joao@example.com',
-    phone: '+55 (11) 99999-9999',
-    location: 'São Paulo, Brasil',
-    github: 'https://github.com/joaovitorpaludo',
-    linkedin: 'https://linkedin.com/in/joaovitorpaludo',
-  },
-}
-
 export function Contact() {
   const { methods, handleSubmit, theme } = useContact()
+  const { t } = useTranslation('contact')
 
   return (
     <S.Section id="contact">
       <S.Container>
         <S.ContentWrapper>
           <S.Header>
-            <S.Title>Entre em Contato</S.Title>
+            <S.Title>{t('title')}</S.Title>
             <S.Divider />
-            <S.Description>
-              Vamos trabalhar juntos! Entre em contato para discutir projetos,
-              oportunidades ou apenas para trocar uma ideia.
-            </S.Description>
+            <S.Description>{t('description')}</S.Description>
           </S.Header>
 
           <S.Grid>
             <S.ContactInfo>
-              <S.SectionTitle>Informações de Contato</S.SectionTitle>
+              <S.SectionTitle>{t('info.title')}</S.SectionTitle>
 
               <S.ContactItems>
                 <S.ContactItem>
@@ -47,9 +36,9 @@ export function Contact() {
                     <Mail color={theme.mainGreen} size={24} />
                   </S.IconWrapper>
                   <S.ContactDetails>
-                    <S.ContactLabel>Email</S.ContactLabel>
-                    <S.ContactLink href={`mailto:${mockData.personal.email}`}>
-                      {mockData.personal.email}
+                    <S.ContactLabel>{t('info.email.label')}</S.ContactLabel>
+                    <S.ContactLink href={`mailto:${t('personal.email')}`}>
+                      {t('personal.email')}
                     </S.ContactLink>
                   </S.ContactDetails>
                 </S.ContactItem>
@@ -59,9 +48,9 @@ export function Contact() {
                     <Phone color={theme.mainGreen} size={24} />
                   </S.IconWrapper>
                   <S.ContactDetails>
-                    <S.ContactLabel>Telefone</S.ContactLabel>
-                    <S.ContactLink href={`tel:${mockData.personal.phone}`}>
-                      {mockData.personal.phone}
+                    <S.ContactLabel>{t('info.phone.label')}</S.ContactLabel>
+                    <S.ContactLink href={`tel:${t('personal.phone')}`}>
+                      {t('personal.phone')}
                     </S.ContactLink>
                   </S.ContactDetails>
                 </S.ContactItem>
@@ -71,24 +60,24 @@ export function Contact() {
                     <MapPin color={theme.mainGreen} size={24} />
                   </S.IconWrapper>
                   <S.ContactDetails>
-                    <S.ContactLabel>Localização</S.ContactLabel>
-                    <S.ContactText>{mockData.personal.location}</S.ContactText>
+                    <S.ContactLabel>{t('info.location.label')}</S.ContactLabel>
+                    <S.ContactText>{t('personal.location')}</S.ContactText>
                   </S.ContactDetails>
                 </S.ContactItem>
               </S.ContactItems>
 
               <S.SocialSection>
-                <S.SocialTitle>Redes Sociais</S.SocialTitle>
+                <S.SocialTitle>{t('social.title')}</S.SocialTitle>
                 <S.SocialLinks>
                   <S.SocialLink
-                    href={mockData.personal.github}
+                    href={t('personal.github')}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Github size={24} />
                   </S.SocialLink>
                   <S.SocialLink
-                    href={mockData.personal.linkedin}
+                    href={t('personal.linkedin')}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -98,16 +87,17 @@ export function Contact() {
               </S.SocialSection>
 
               <S.AvailabilityCard>
-                <S.AvailabilityTitle>Disponibilidade</S.AvailabilityTitle>
+                <S.AvailabilityTitle>
+                  {t('availability.title')}
+                </S.AvailabilityTitle>
                 <S.AvailabilityText>
-                  Disponível para novos projetos e oportunidades freelance.
-                  Respondo em até 24 horas.
+                  {t('availability.text')}
                 </S.AvailabilityText>
               </S.AvailabilityCard>
             </S.ContactInfo>
 
             <S.FormSection>
-              <S.SectionTitle>Envie uma Mensagem</S.SectionTitle>
+              <S.SectionTitle>{t('form.title')}</S.SectionTitle>
 
               {methods.formState.isSubmitSuccessful ? (
                 <S.SuccessMessage>
@@ -116,31 +106,33 @@ export function Contact() {
                     size={48}
                     style={{ margin: '0 auto 1rem' }}
                   />
-                  <S.SuccessTitle>Mensagem Enviada!</S.SuccessTitle>
-                  <S.SuccessText>
-                    Obrigado pelo contato. Retornarei em breve!
-                  </S.SuccessText>
+                  <S.SuccessTitle>{t('success.title')}</S.SuccessTitle>
+                  <S.SuccessText>{t('success.text')}</S.SuccessText>
                 </S.SuccessMessage>
               ) : (
                 <S.Form onSubmit={methods.handleSubmit(handleSubmit)}>
                   <S.FormGrid>
                     <S.FormGroup>
-                      <S.Label htmlFor="name">Nome *</S.Label>
+                      <S.Label htmlFor="name">
+                        {t('form.fields.name.label')} *
+                      </S.Label>
                       <S.Input
                         type="text"
                         id="name"
                         {...methods.register('from_name')}
-                        placeholder="Seu nome"
+                        placeholder={t('form.fields.name.placeholder')}
                         hasError={!methods.formState.errors.from_name}
                       />
                     </S.FormGroup>
 
                     <S.FormGroup>
-                      <S.Label htmlFor="email">Email *</S.Label>
+                      <S.Label htmlFor="email">
+                        {t('form.fields.email.label')} *
+                      </S.Label>
                       <S.Input
                         type="email"
                         id="email"
-                        placeholder="seu@email.com"
+                        placeholder={t('form.fields.email.placeholder')}
                         {...methods.register('from_email')}
                         hasError={!methods.formState.errors.from_email}
                       />
@@ -148,23 +140,27 @@ export function Contact() {
                   </S.FormGrid>
 
                   <S.FormGroup>
-                    <S.Label htmlFor="subject">Assunto *</S.Label>
+                    <S.Label htmlFor="subject">
+                      {t('form.fields.subject.label')} *
+                    </S.Label>
                     <S.Input
                       type="text"
                       id="subject"
                       {...methods.register('subject')}
-                      placeholder="Assunto do contato"
+                      placeholder={t('form.fields.subject.placeholder')}
                       hasError={!methods.formState.errors.subject}
                     />
                   </S.FormGroup>
 
                   <S.FormGroup>
-                    <S.Label htmlFor="message">Mensagem *</S.Label>
+                    <S.Label htmlFor="message">
+                      {t('form.fields.message.label')} *
+                    </S.Label>
                     <S.TextArea
                       id="message"
                       {...methods.register('message')}
                       rows={6}
-                      placeholder="Descreva seu projeto ou mensagem..."
+                      placeholder={t('form.fields.message.placeholder')}
                       hasError={!methods.formState.errors.message}
                     />
                   </S.FormGroup>
@@ -177,7 +173,7 @@ export function Contact() {
                     ) : (
                       <>
                         <Send size={20} />
-                        Enviar Mensagem
+                        {t('form.submit')}
                       </>
                     )}
                   </S.SubmitButton>
