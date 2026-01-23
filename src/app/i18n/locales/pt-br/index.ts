@@ -1,5 +1,6 @@
 import 'dayjs/locale/pt-br'
 
+export * from './footer/footer'
 export * from './header/header'
 export * from './home/about'
 export * from './home/contact'

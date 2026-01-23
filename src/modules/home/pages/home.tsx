@@ -2,6 +2,7 @@ import { Header } from '../../../components/layout/header/header'
 import { About } from './about/about'
 import { Contact } from './contact/contact'
 import { Experience } from './experience/experience'
+import { Footer } from './footer/footer'
 import { Hero } from './hero/hero'
 import { Projects } from './projects/projects'
 import * as S from './styles'
@@ -15,6 +16,7 @@ export function Home() {
         <Experience />
         <Projects />
         <Contact />
+        <Footer />
       </main>
     </S.HomePageContainer>
   )
