@@ -35,6 +35,7 @@ export const ContentWrapper = styled(motion.div)`
   max-width: 72rem; /* max-w-6xl */
   margin-left: auto;
   margin-right: auto;
+  opacity: 1 !important;
 `
 
 export const Header = styled.div`
@@ -79,6 +80,7 @@ export const CarouselContainer = styled(motion.div)`
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
   margin-bottom: 3rem; /* mb-12 */
+  opacity: 1 !important;
 `
 
 export const CarouselGrid = styled.div`
@@ -265,6 +267,8 @@ export const GridItem = styled(motion.div)<{ active?: boolean }>`
   transition: all 0.3s;
   border: 2px solid
     ${(props) => (props.active ? props.theme.mainGreen : 'transparent')};
+  opacity: 1 !important;
+
   &:hover {
     transform: scale(1.05);
   }

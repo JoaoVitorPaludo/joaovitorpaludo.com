@@ -1,25 +1,9 @@
-import {
-  Github,
-  Languages,
-  Linkedin,
-  Mail,
-  Menu,
-  Moon,
-  Sun,
-  X,
-} from 'lucide-react'
+import { Github, Languages, Linkedin, Menu, Moon, Sun, X } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppStore } from '../../../store/use-app-store/use-app-store'
 import * as S from './styles'
 import logo from '../../../assets/base-logo.png'
-const mockData = {
-  personal: {
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
-    email: 'email@example.com',
-  },
-}
 
 export function Header() {
   const { setTheme, theme, toggleLanguage } = useAppStore()
@@ -43,7 +27,6 @@ export function Header() {
               {/* <S.LogoText>JP</S.LogoText> */}
               <img src={logo} alt="Logo" />
             </S.LogoBox>
-            {/* <S.BrandName>João Vitor</S.BrandName> */}
           </S.LogoContainer>
 
           <S.DesktopNav>
@@ -63,22 +46,22 @@ export function Header() {
 
             <S.SocialLinks>
               <S.SocialLink
-                href={mockData.personal.github}
+                href="https://github.com/joaovitorpaludo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Github size={20} />
               </S.SocialLink>
               <S.SocialLink
-                href={mockData.personal.linkedin}
+                href="https://www.linkedin.com/in/jo%C3%A3ovitorpaludo/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Linkedin size={20} />
               </S.SocialLink>
-              <S.SocialLink href={`mailto:${mockData.personal.email}`}>
+              {/* <S.SocialLink href="mailto:joaovpaludo@gmail.com">
                 <Mail size={20} />
-              </S.SocialLink>
+              </S.SocialLink> */}
             </S.SocialLinks>
 
             <S.ActionsContainer>
@@ -130,22 +113,22 @@ export function Header() {
 
               <S.MobileSocialLinks>
                 <S.SocialLink
-                  href={mockData.personal.github}
+                  href="https://github.com/joaovitorpaludo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Github size={20} />
                 </S.SocialLink>
                 <S.SocialLink
-                  href={mockData.personal.linkedin}
+                  href="https://www.linkedin.com/in/joaovitorpaludo/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Linkedin size={20} />
                 </S.SocialLink>
-                <S.SocialLink href={`mailto:${mockData.personal.email}`}>
+                {/* <S.SocialLink href="mailto:joaovpaludo@gmail.com">
                   <Mail size={20} />
-                </S.SocialLink>
+                </S.SocialLink> */}
               </S.MobileSocialLinks>
             </S.MobileMenuList>
           </S.MobileMenu>
