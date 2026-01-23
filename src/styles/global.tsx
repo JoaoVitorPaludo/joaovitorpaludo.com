@@ -25,6 +25,19 @@ export const GlobalStyles = () => (
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
           monospace;
       }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .animate-spin {
+        animation: spin 1s linear infinite;
+      }
     `}
   />
 )

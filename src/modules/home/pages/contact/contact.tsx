@@ -2,6 +2,7 @@ import {
   CheckCircle,
   Github,
   Linkedin,
+  Loader2,
   Mail,
   MapPin,
   Phone,
@@ -169,8 +170,16 @@ export function Contact() {
                   </S.FormGroup>
 
                   <S.SubmitButton type="submit">
-                    <Send size={20} />
-                    Enviar Mensagem
+                    {methods.formState.isSubmitting ? (
+                      <>
+                        <Loader2 size={20} className="animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        <Send size={20} />
+                        Enviar Mensagem
+                      </>
+                    )}
                   </S.SubmitButton>
                 </S.Form>
               )}
