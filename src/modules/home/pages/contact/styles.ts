@@ -81,7 +81,7 @@ export const Grid = styled.div`
   }
 `
 
-export const ContactInfo = styled.div``
+export const ContactInfo = styled(motion.div)``
 
 export const SectionTitle = styled.h3`
   font-size: 1.5rem;
@@ -192,7 +192,7 @@ export const AvailabilityText = styled.p`
   opacity: 0.9;
 `
 
-export const FormSection = styled.div``
+export const FormSection = styled(motion.div)``
 
 export const Form = styled.form`
   display: flex;

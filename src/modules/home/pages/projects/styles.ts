@@ -31,7 +31,7 @@ export const Container = styled.div`
   }
 `
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled(motion.div)`
   max-width: 72rem; /* max-w-6xl */
   margin-left: auto;
   margin-right: auto;
@@ -72,7 +72,7 @@ export const Description = styled.p`
   margin-right: auto;
 `
 
-export const CarouselContainer = styled.div`
+export const CarouselContainer = styled(motion.div)`
   position: relative;
   background-color: ${(props) => props.theme.secondary};
   border-radius: 0.75rem; /* rounded-xl */

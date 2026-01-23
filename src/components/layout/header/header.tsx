@@ -56,9 +56,7 @@ export function Header() {
             <S.NavButton onClick={() => scrollToSection('projects')}>
               {t('projects')}
             </S.NavButton>
-            <S.NavButton onClick={() => scrollToSection('skills')}>
-              {t('skills')}
-            </S.NavButton>
+
             <S.NavButton onClick={() => scrollToSection('contact')}>
               {t('contact')}
             </S.NavButton>
