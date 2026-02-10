@@ -6,7 +6,7 @@ import {
   itemVariants,
 } from '../../../../commons/animations/variants'
 import * as S from './styles'
-
+import profile from '../../../../assets/profile-image.jpeg'
 export function About() {
   const { t } = useTranslation('about')
 
@@ -29,10 +29,7 @@ export function About() {
             <S.Grid>
               <S.ImageContainer>
                 <S.ImageWrapper>
-                  <S.ProfileImage
-                    src="https://github.com/joaovitorpaludo.png"
-                    alt="João Vitor Paludo"
-                  />
+                  <S.ProfileImage src={profile} alt="João Vitor Paludo" />
                 </S.ImageWrapper>
               </S.ImageContainer>
 
@@ -50,7 +47,7 @@ export function About() {
                         <Code size={24} />
                       </S.IconBox>
                       <S.StatInfo>
-                        <S.StatValue>5+</S.StatValue>
+                        <S.StatValue>50+</S.StatValue>
                         <S.StatLabel>{t('funFacts.projects')}</S.StatLabel>
                       </S.StatInfo>
                     </S.StatItem>
