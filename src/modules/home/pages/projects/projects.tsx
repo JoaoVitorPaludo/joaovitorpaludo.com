@@ -1,5 +1,4 @@
 import { ChevronLeft, ChevronRight, ExternalLink, Github } from 'lucide-react'
-import { useState } from 'react'
 import * as S from './styles'
 import { useProjects } from './use-projects'
 import { AnimatePresence } from 'framer-motion'
@@ -7,6 +6,7 @@ import {
   containerVariants,
   itemVariants,
 } from '../../../../commons/animations/variants'
+import { useState } from 'react'
 
 export function Projects() {
   const {
@@ -19,8 +19,27 @@ export function Projects() {
     setCurrentProjectIndex,
   } = useProjects()
 
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set())
+  const getProjectImage = (projectName: string) => {
+    if (imageErrors.has(projectName)) {
+      return `https://opengraph.githubassets.com/1/joaovitorpaludo/${projectName}`
+    }
+    return `https://raw.githubusercontent.com/joaovitorpaludo/${projectName}/master/.github/preview.jpg`
+  }
 
+  const handleImageError = (projectName: string) => {
+    setImageErrors((prev) => new Set([...prev, projectName]))
+  }
+
+  console.log('imageErrors', imageErrors)
+  // const getProjectImage = (projectName: string) => {
+  //   if (imageErrors[projectName]) {
+  //     return `https://opengraph.githubassets.com/1/joaovitorpaludo/${projectName}`
+  //   }
+  //   return `https://raw.githubusercontent.com/joaovitorpaludo/${projectName}/master/.github/preview.jpg`
+  // }
+
+  const currentProject = projects[currentProjectIndex]
   if (loading) {
     return (
       <S.Section>
@@ -35,18 +54,6 @@ export function Projects() {
     )
   }
 
-  const handleImageError = (projectName: string) => {
-    setImageErrors((prev) => ({ ...prev, [projectName]: true }))
-  }
-
-  const getProjectImage = (projectName: string) => {
-    if (imageErrors[projectName]) {
-      return `https://opengraph.githubassets.com/1/joaovitorpaludo/${projectName}`
-    }
-    return `https://raw.githubusercontent.com/joaovitorpaludo/${projectName}/master/.github/preview.jpg`
-  }
-
-  const currentProject = projects[currentProjectIndex]
   return (
     <S.Section id="projects">
       <S.Container>
@@ -71,6 +78,9 @@ export function Projects() {
                     src={getProjectImage(currentProject.name)}
                     alt={currentProject.name}
                     onError={() => handleImageError(currentProject.name)}
+                    onLoad={() =>
+                      console.log(`Image loaded for ${currentProject.name}`)
+                    }
                   />
                   <S.ImageOverlay />
                 </S.ImageContainer>
