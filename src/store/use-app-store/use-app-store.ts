@@ -22,8 +22,8 @@ export const getInitialTheme = (): Theme => {
     return savedTheme as Theme
   }
 
-  applyTheme('light')
-  return 'light'
+  applyTheme('dark')
+  return 'dark'
 }
 
 export const getInitialLanguage = (): Language => {
@@ -39,7 +39,7 @@ export const getInitialLanguage = (): Language => {
     return savedLanguage as Language
   }
 
-  const defaultLanguage = i18n.language.startsWith('pt') ? 'PT-BR' : 'EN-US'
+  const defaultLanguage = i18n.language.startsWith('en') ? 'EN-US' : 'PT-BR'
   i18n.changeLanguage(defaultLanguage)
   localStorage.setItem(KEY_LANGUAGE, defaultLanguage)
   return defaultLanguage

@@ -15,19 +15,19 @@ import { Locale } from './config.contants'
 export { exists, t } from 'i18next'
 
 export const languages = [
-  { value: Locale.ptBR, label: 'Português (Brasil)' },
-  { value: Locale.enUS, label: 'English (United States)' },
   { value: Locale.esES, label: 'Español (España)' },
+  { value: Locale.enUS, label: 'English (United States)' },
+  { value: Locale.ptBR, label: 'Português (Brasil)' },
 ]
 
 const resources = {
-  [Locale.ptBR]: ptBR,
-  [Locale.enUS]: enUS,
   [Locale.esES]: esES,
+  [Locale.enUS]: enUS,
+  [Locale.ptBR]: ptBR,
 }
 
 const options = {
-  lng: Locale.ptBR,
+  lng: Locale.enUS,
   resources,
   debug: false,
   interpolation: { escapeValue: false },
