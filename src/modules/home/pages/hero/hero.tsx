@@ -17,8 +17,6 @@ export function Hero() {
     }
   }
 
-  const handleResumeDownload = () => {}
-
   return (
     <S.Section>
       <S.Container>
@@ -47,10 +45,12 @@ export function Hero() {
               <S.PrimaryButton onClick={scrollToAbout}>
                 {t('primaryButton')}
               </S.PrimaryButton>
-              <S.SecondaryButton onClick={handleResumeDownload}>
-                <Download size={20} />
-                {t('secondaryButton')}
-              </S.SecondaryButton>
+              <a href="/files/Currículo - João Vitor.pdf" download>
+                <S.SecondaryButton>
+                  <Download size={20} />
+                  {t('secondaryButton')}
+                </S.SecondaryButton>
+              </a>
             </S.ButtonGroup>
 
             <S.ScrollButton onClick={scrollToAbout} variants={itemVariants}>

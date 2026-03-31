@@ -136,7 +136,9 @@ export const ButtonGroup = styled(motion.div)`
   justify-content: center;
   align-items: center;
   margin-bottom: 4rem;
-
+  a {
+    text-decoration: none;
+  }
   @media (min-width: 640px) {
     flex-direction: row;
   }
